@@ -1,0 +1,99 @@
+body {
+  background-color: #3b3628;
+}
+
+.styled-button {
+  margin-top: 10px;
+  background-color: #a1a60a;
+  border: #565906;
+}
+.styled-button:hover {
+  margin-top: 10px;
+  border: #a1a60a;
+  background-color: #565906;
+}
+
+.cep-input {
+  position: relative;
+  color: #565906;
+  font-weight: 600;
+}
+
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cep-input::after,
+.cep-input::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--angle),
+    #8c3908,
+    #f2cc0f,
+    transparent 90%
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 6px;
+  animation: 3s spin linear infinite;
+}
+.cep-input::before {
+  filter: blur(1.5rem);
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container-title {
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 900;
+}
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: left;
+  color: #f2cc0f;
+  font-weight: 900;
+  font-size: 32px;
+  text-transform: capitalize;
+}
+h3 {
+  color: #f2cc0f;
+  margin-top: 10%;
+}
+h6 {
+  color: #f2cc0f;
+  margin-bottom: 24px;
+}
